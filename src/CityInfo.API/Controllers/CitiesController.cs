@@ -10,7 +10,7 @@ namespace CityInfo.API.Controllers
     public class CitiesController : Controller
     {
         private ICityInfoRepository _cityInfoRepository;
-        // add commment
+        // add commment 2
         public CitiesController(ICityInfoRepository cityInfoRepository)
         {
             _cityInfoRepository = cityInfoRepository;
