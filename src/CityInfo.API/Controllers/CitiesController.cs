@@ -2,10 +2,7 @@
 using CityInfo.API.Models;
 using CityInfo.API.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CityInfo.API.Controllers
 {
@@ -13,7 +10,7 @@ namespace CityInfo.API.Controllers
     public class CitiesController : Controller
     {
         private ICityInfoRepository _cityInfoRepository;
-
+        // add commment
         public CitiesController(ICityInfoRepository cityInfoRepository)
         {
             _cityInfoRepository = cityInfoRepository;
@@ -23,7 +20,7 @@ namespace CityInfo.API.Controllers
         public IActionResult GetCities()
         {
             var cityEntities = _cityInfoRepository.GetCities();
-            var results = Mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities); 
+            var results = Mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities);
 
             return Ok(results);
         }
@@ -40,7 +37,7 @@ namespace CityInfo.API.Controllers
 
             if (includePointsOfInterest)
             {
-                var cityResult = Mapper.Map<CityDto>(city); 
+                var cityResult = Mapper.Map<CityDto>(city);
                 return Ok(cityResult);
             }
 
